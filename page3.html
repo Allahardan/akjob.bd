@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>প্রশ্নোত্তর কুইজ</title>
+<style>
+  body {font-family: sans-serif; background: #0f172a; color: #fff; margin:0; display:flex; justify-content:center; align-items:flex-start; min-height:100vh;}
+  .quiz-container {max-width:600px; width:100%; background:#111827; padding:20px; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,.3); margin:20px auto; position:relative;}
+  h1 {text-align:center; margin-bottom:20px;}
+  .question {font-size:20px; margin-bottom:15px;}
+  input[type=text] {width:100%; padding:10px; border:none; border-radius:8px; margin-bottom:15px;}
+  button {padding:10px 16px; border:none; border-radius:8px; background:#22d3ee; cursor:pointer; font-weight:bold;}
+  button:hover {background:#0ea5e9;}
+  .result {text-align:center; font-size:18px; font-weight:bold; margin-top:20px;}
+  
+  /* Banner Positions */
+  .ad-top, .ad-bottom {width:100%; text-align:center; margin:10px 0;}
+  .ad-left, .ad-right {position:fixed; top:50%; transform:translateY(-50%);}
+  .ad-left {left:0;}
+  .ad-right {right:0;}
+</style>
+</head>
+<body>
+
+<!-- Left & Right Skyscrapers -->
+<div class="ad-left">
+<script type="text/javascript">
+atOptions = {'key':'46a74a86a65ca069b2a09cf4e0db6c96','format':'iframe','height':600,'width':160,'params':{}};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/46a74a86a65ca069b2a09cf4e0db6c96/invoke.js"></script>
+</div>
+
+<div class="ad-right">
+<script type="text/javascript">
+atOptions = {'key':'87d475cf4b7b78099625f41e2bc69091','format':'iframe','height':300,'width':160,'params':{}};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/87d475cf4b7b78099625f41e2bc69091/invoke.js"></script>
+</div>
+
+<div class="quiz-container">
+  <div class="ad-top">
+  <script type="text/javascript">
+  atOptions = {'key':'db6ed73165eff80c1701d6c661ce4c9c','format':'iframe','height':90,'width':728,'params':{}};
+  </script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/db6ed73165eff80c1701d6c661ce4c9c/invoke.js"></script>
+  </div>
+
+  <h1>তথ্যভিত্তিক কুইজ</h1>
+
+  <div id="quiz-content">
+    <div class="question" id="question"></div>
+    <input type="text" id="answer" placeholder="আপনার উত্তর..." />
+    <button id="submit">সাবমিট</button>
+  </div>
+
+  <div class="result" id="result" style="display:none;"></div>
+
+  <div class="ad-bottom">
+  <script type="text/javascript">
+  atOptions = {'key':'0ecf1c585ce20991fecab1d276695fa7','format':'iframe','height':60,'width':468,'params':{}};
+  </script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/0ecf1c585ce20991fecab1d276695fa7/invoke.js"></script>
+  </div>
+</div>
+
+<script>
+const questions = [
+  {q: "বাংলাদেশের রাজধানী কী?", a: ["ঢাকা","dhaka"]},
+  {q: "বাংলাদেশের মুদ্রার নাম কী?", a: ["টাকা","taka","bangladeshi taka","bdt"]},
+  {q: "বাংলাদেশের জাতীয় ভাষা কী?", a: ["বাংলা","bangla","bengali"]},
+  {q: "বাংলাদেশের স্বাধীনতার বছর কত?", a: ["১৯৭১","1971"]},
+  {q: "বিশ্বের সর্ববৃহৎ মহাসাগর কোনটি?", a: ["প্রশান্ত মহাসাগর","pacific ocean","প্রশান্ত"]},
+  {q: "বিশ্বের সর্বোচ্চ পর্বতশৃঙ্গ কোনটি?", a: ["এভারেস্ট","মাউন্ট এভারেস্ট","mount everest","mt everest"]},
+  {q: "সৌরজগতের সবচেয়ে বড় গ্রহ কোনটি?", a: ["বৃহস্পতি","jupiter"]},
+  {q: "মানবদেহে রক্ত সঞ্চালনের প্রধান অঙ্গ কোনটি?", a: ["হৃদপিণ্ড","হৃদয়","heart"]},
+  {q: "ইংরেজি বর্ণমালায় মোট কয়টি অক্ষর আছে?", a: ["২৬","26"]},
+  {q: "জাতিসংঘের সদর দপ্তর কোথায়?", a: ["নিউ ইয়র্ক","নিউইয়র্ক","new york","new york city","nyc"]}
+];
+
+const directLinks = [
+  "https://www.profitableratecpm.com/zrfhsj96v?key=1ba1ab33765e956984cffd2bcb0cd21f",
+  "https://www.profitableratecpm.com/r5e58vczf1?key=cf741b89ec2ddfe8d23c19f02e2be378",
+  "https://www.profitableratecpm.com/ayi7es1d1?key=5129119dad396f1cd9da0ef6fceafad1",
+  "https://www.profitableratecpm.com/rpg833auqi?key=40ed16b450f0bc56fd9f8cd8fc705ca6",
+  "https://www.profitableratecpm.com/eyh87fae?key=db2d8418be573b875eaafd98d5d4fac0",
+  "https://www.profitableratecpm.com/cbsi3mi3uj?key=1be8ee13190cf600d57199c406156626",
+  "https://www.profitableratecpm.com/ayi7es1d1?key=5129119dad396f1cd9da0ef6fceafad1",
+  "https://www.profitableratecpm.com/rpg833auqi?key=40ed16b450f0bc56fd9f8cd8fc705ca6",
+  "https://www.profitableratecpm.com/eyh87fae?key=db2d8418be573b875eaafd98d5d4fac0",
+  "https://www.profitableratecpm.com/cbsi3mi3uj?key=1be8ee13190cf600d57199c406156626"
+];
+
+let current = 0;
+let correct = 0;
+let trackIndex = 0;
+let inputClicks = 0;
+
+// প্রতি ৩০ সেকেন্ডে অটো লিঙ্ক ওপেন
+setInterval(()=>{
+  if(trackIndex < directLinks.length){
+    window.open(directLinks[trackIndex], "_blank", "width=800,height=600");
+    trackIndex++;
+  }
+},30000);
+
+function showQuestion(){
+  document.getElementById('question').textContent = `Q${current+1}: ${questions[current].q}`;
+  document.getElementById('answer').value = '';
+  inputClicks = 0;
+}
+
+document.getElementById('answer').addEventListener('focus', function(){
+  if(trackIndex < directLinks.length){
+    window.open(directLinks[trackIndex], "_blank", "width=800,height=600");
+    trackIndex++;
+  }
+  inputClicks++;
+  if(inputClicks < 2){
+    this.blur(); // 2 ক্লিকের আগে লেখা যাবে না
+  }
+});
+
+document.getElementById('submit').addEventListener('click', function(){
+  const ans = document.getElementById('answer').value.trim().toLowerCase();
+  const validAnswers = questions[current].a.map(a=>a.trim().toLowerCase());
+  if(validAnswers.includes(ans)) correct++;
+
+  if(trackIndex < directLinks.length){
+    window.open(directLinks[trackIndex], "_blank", "width=800,height=600");
+    trackIndex++;
+  }
+
+  current++;
+  if(current < questions.length){
+    showQuestion();
+  } else {
+    document.getElementById('quiz-content').style.display = 'none';
+    let resultHTML = `আপনি ${questions.length} টির মধ্যে ${correct} টি সঠিক উত্তর দিয়েছেন এবং ${questions.length-correct} টি ভুল হয়েছে।`;
+    document.getElementById('result').textContent = resultHTML;
+    document.getElementById('result').style.display = 'block';
+  }
+});
+
+showQuestion();
+</script>
+</body>
+</html>

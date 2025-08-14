@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Page Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+            gap: 15px;
+        }
+
+        .nav-button {
+            padding: 15px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-button:hover:not([disabled]) {
+            background-color: #0056b3;
+        }
+
+        .nav-button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>নেভিগেশন বাটন পেজ</h1>
+    <div class="button-container">
+        <button class="nav-button" onclick="openPage(1)" id="btn1">১ নম্বর পেজ</button>
+        <button class="nav-button" onclick="openPage(2)" id="btn2">২ নম্বর পেজ</button>
+        <button class="nav-button" onclick="openPage(3)" id="btn3">৩ নম্বর পেজ</button>
+        <button class="nav-button" onclick="openPage(4)" id="btn4">৪ নম্বর পেজ</button>
+        <button class="nav-button" onclick="openPage(5)" id="btn5">৫ নম্বর পেজ</button>
+        <button class="nav-button" onclick="openPage(6)" id="btn6">৬ নম্বর পেজ</button>
+        <button class="nav-button" onclick="openPage(7)" id="btn7">৭ নম্বর পেজ</button>
+        <button class="nav-button" onclick="openPage(8)" id="btn8">৮ নম্বর পেজ</button>
+        <button class="nav-button" onclick="openPage(9)" id="btn9">৯ নম্বর পেজ</button>
+        <button class="nav-button" onclick="openPage(10)" id="btn10">১০ নম্বর পেজ</button>
+    </div>
+
+    <script>
+        const cooldownTime = 30 * 60 * 1000; // 30 মিনিট মিলিসেকেন্ডে
+
+        // লোকালস্টোরেজ থেকে কুলডাউন চেক করে বাটন ডিসেবল করা
+        for (let i = 1; i <= 10; i++) {
+            const btn = document.getElementById(`btn${i}`);
+            const lastClick = localStorage.getItem(`btn${i}_lastClick`);
+            if (lastClick) {
+                const elapsed = Date.now() - parseInt(lastClick);
+                if (elapsed < cooldownTime) {
+                    btn.disabled = true;
+                    setTimeout(() => { btn.disabled = false; }, cooldownTime - elapsed);
+                }
+            }
+        }
+
+        function openPage(pageNumber) {
+            const btn = document.getElementById(`btn${pageNumber}`);
+            btn.disabled = true;
+            localStorage.setItem(`btn${pageNumber}_lastClick`, Date.now());
+            setTimeout(() => { btn.disabled = false; }, cooldownTime);
+            // পেজ ওপেন করা
+            window.location.href = `page${pageNumber}.html`;
+        }
+    </script>
+</body>
+</html>
